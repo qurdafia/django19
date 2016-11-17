@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block head_title %}{{ detail_list.title }} | {{ block.super }}{% endblock head_title %}
+{% block content %}
+    <div class="col-sm-6 col-sm-offset-3">
+        <h1>Welcome to the {{ title }} page.</h1>
+        <h4>{{ detail_list.title }}</h4>
+        <small>{{ detail_list.timestamp }}</small>
+        <p>{{ detail_list.content|linebreaks }}</p>
+    </div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+        <h1>Welcome to the {{ title }} page.</h1>
+        {% for obj in object_list %}
+        <div class="thumbnail">
+            <!--img src="..." alt="..."-->
+            <div class="caption">
+                <a href="{{ obj.get_absolute_url }}"><h4>{{ obj.title }}</h4></a>
+                <p>{{ obj.timestamp }}</p>
+                <p>{{ obj.content }}</p>
+                <p><a href="{{ obj.get_absolute_url }}" class="btn btn-primary" role="button">more</a></p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
